@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import {
+	ActivityIndicator,
+	Alert,
 	Button,
 	Image,
 	ImageBackground,
 	Modal,
 	Pressable,
 	ScrollView,
+	StatusBar,
 	Text,
 	View,
 } from "react-native";
 import LogoImage2 from "./assets/adaptive-icon.png";
+import Greet from "./Components/Greet";
 const LogoImage = require("./assets/adaptive-icon.png");
 
 const App = () => {
@@ -22,12 +26,51 @@ const App = () => {
 				padding: 60,
 			}}
 		>
+			<Greet name={"Lisa"} />
+			<Greet name={"shabi"} />
+			<StatusBar backgroundColor={"lightgreen"} barStyle={"default"} hidden />
+			<ActivityIndicator />
+			<ActivityIndicator size={"large"} />
+			<ActivityIndicator size={"large"} color={"midnightblue"} animating />
 			<Button
 				title="press"
 				onPress={() => setState(() => true)}
 				color={"midnightblue"}
 				disabled={false}
 			/>
+			<Button
+				title="Alert"
+				onPress={() => Alert.alert("Invalid data")}
+				color={"midnightblue"}
+			/>
+			<Button
+				title="Alert2"
+				onPress={() =>
+					Alert.alert("Title: Invalid data", "massage: date of birth incorrect")
+				}
+				color={"midnightblue"}
+			/>
+			<Button
+				title="Alert3"
+				onPress={() =>
+					Alert.alert(
+						"Title: Invalid data",
+						"massage: date of birth incorrect",
+						[
+							{
+								text: "Cancle",
+								onPress: () => console.log("Cancel pressed"),
+							},
+							{
+								text: "Ok",
+								onPress: () => console.log("Ok pressed"),
+							},
+						]
+					)
+				}
+				color={"midnightblue"}
+			/>
+
 			<Modal
 				visible={state}
 				onRequestClose={() => setState(() => false)}
