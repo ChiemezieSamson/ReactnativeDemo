@@ -4,6 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 const Greet = ({ name }) => {
 	return (
 		<View>
+			<View style={style.darkMode}>
+				<Text style={style.darkModeText}>
+					Styles inheritance <Text style={style.boldText}>In Bold</Text>
+				</Text>
+			</View>
 			<View style={[style.hello, style.box, style.boxShadow]}>
 				<Text style={style.container}>Hello {name}</Text>
 			</View>
@@ -26,9 +31,18 @@ const style = StyleSheet.create({
 		fontSize: 18,
 		color: "pink",
 	},
+	darkMode: {
+		backgroundColor: "black",
+	},
+	darkModeText: {
+		color: "white",
+	},
+	boldText: {
+		fontWeight: "bold",
+	},
 	box: {
 		width: 250,
-		height: 250,
+		height: "20%",
 		// padding: 10,
 		paddingHorizontal: 10,
 		marginVertical: 10,

@@ -9,30 +9,33 @@ import {
 	Pressable,
 	ScrollView,
 	StatusBar,
+	StyleSheet,
 	Text,
 	View,
 } from "react-native";
 import LogoImage2 from "./assets/adaptive-icon.png";
 import Greet from "./Components/Greet";
+import Box from "./Components/Box/Box";
 const LogoImage = require("./assets/adaptive-icon.png");
 
 const App = () => {
 	const [state, setState] = useState(false);
 	return (
-		<View
-			style={{
-				flex: 1,
-				backgroundColor: "plum",
-				padding: 60,
-			}}
-		>
-			<Greet name={"Lisa"} />
-			<Greet name={"shabi"} />
-			<StatusBar backgroundColor={"lightgreen"} barStyle={"default"} hidden />
-			<ActivityIndicator />
+		<View style={style.container}>
+			<Box Style={{ backgroundColor: "#8e9b00" }}>Box 1</Box>
+			<Box Style={{ backgroundColor: "#b65d1f" }}>Box 2</Box>
+			<Box Style={{ backgroundColor: "#1c4c56" }}>Box 3</Box>
+			<Box Style={{ backgroundColor: "#ab9156" }}>Box 4</Box>
+			<Box Style={{ backgroundColor: "#6b0803" }}>Box 5</Box>
+			<Box Style={{ backgroundColor: "#1c4c56" }}>Box 6</Box>
+			<Box Style={{ backgroundColor: "#b95f21" }}>Box 7</Box>
+			{/* <Greet name={"Lisa"} />
+			<Greet name={"shabi"} /> */}
+			{/* <StatusBar backgroundColor={"lightgreen"} barStyle={"default"} hidden /> */}
+			{/* <ActivityIndicator />
 			<ActivityIndicator size={"large"} />
-			<ActivityIndicator size={"large"} color={"midnightblue"} animating />
-			<Button
+			<ActivityIndicator size={"large"} color={"midnightblue"} animating /> */}
+			{/* <Button
 				title="press"
 				onPress={() => setState(() => true)}
 				color={"midnightblue"}
@@ -49,8 +52,8 @@ const App = () => {
 					Alert.alert("Title: Invalid data", "massage: date of birth incorrect")
 				}
 				color={"midnightblue"}
-			/>
-			<Button
+			/> */}
+			{/* <Button
 				title="Alert3"
 				onPress={() =>
 					Alert.alert(
@@ -69,8 +72,8 @@ const App = () => {
 					)
 				}
 				color={"midnightblue"}
-			/>
-
+			/> */}
+			{/* 
 			<Modal
 				visible={state}
 				onRequestClose={() => setState(() => false)}
@@ -91,7 +94,7 @@ const App = () => {
 						onPress={() => setState(() => false)}
 					/>
 				</View>
-			</Modal>
+			</Modal> */}
 			{/* <ScrollView>
 				<Pressable onPressIn={() => console.log("Image pressed")}>
 					<Image
@@ -171,5 +174,13 @@ const App = () => {
 		</View>
 	);
 };
+
+const style = StyleSheet.create({
+	container: {
+		marginTop: 64,
+		borderWidth: 6,
+		borderColor: "red",
+	},
+});
 
 export default App;
